@@ -1,11 +1,13 @@
 import React from 'react'
-import DropDown from './DropDown'
+
 import Search from './Search'
-import { GrLocation } from "react-icons/gr";
+
 import banner from "./../assets/img/banner.jpg"
 
-import { BiHome } from "react-icons/bi";
-import { GiTakeMyMoney } from "react-icons/gi";
+import CityDropDown from './CityDropDown';
+import PropertyDropDown from './PropertyDropDown';
+import PriceDropDown from './PriceDropDown';
+
 export default function Banner() {
   return (
     <div className='h-[90vh] bg-cover bg-no-repeat bg-center flex-col items-center flex bg-black' style={{backgroundImage:`url(${banner})`}}>
@@ -18,9 +20,9 @@ export default function Banner() {
         <p className='lg:text-lg lg:px-15 px-3 py-1 font-semibold text-white'>سفر پاییزی از تو، جاباما</p>
       </div>
       <div className='flex flex-col lg:flex-row w-[1200px] h-[120px] backdrop-blur-lg my-12 rounded-2xl'>
-        <DropDown icon={<GrLocation />} title=" (همه) مقاصد" staticTitle="انتخاب مقصد"  />
-        <DropDown icon={<BiHome  />} title=" (همه) تمام خانه ها" staticTitle="نوع ملک خود را انتخاب کنید  "  />
-        <DropDown icon={<GiTakeMyMoney  />} title=" قیمت (همه)" staticTitle=" فیلتر محدوده قیمت "/>
+        <CityDropDown   />
+        <PropertyDropDown />
+        <PriceDropDown/>
         
         <Search/>
       </div>
