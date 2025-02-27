@@ -5,13 +5,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { HouseContext } from "./HouseContext";
 import { BiHome } from "react-icons/bi";
 
-export default function PropertyDropDown(props) {
+export default function PropertyDropDown() {
     const { property, setProperty, properties } = useContext(HouseContext);
     const [isOpen, setIsOpen] = useState(false);
     return (
       <Menu as="div" className="dropdown relative m-5">
         <MenuButton
-          className="dropdown-btn w-full flex justify-between h-full"
+          className="dropdown-btn w-full flex justify-between"
           onClick={() => setIsOpen(!isOpen)}
         >
           <BiHome  className="text-red-500 text-2xl" />

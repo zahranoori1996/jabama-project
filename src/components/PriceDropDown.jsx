@@ -30,7 +30,7 @@ export default function PriceDropDown() {
  return (
   <Menu as="div" className="dropdown relative m-5">
     <MenuButton
-      className="dropdown-btn w-full flex justify-between h-full"
+      className="dropdown-btn w-full flex justify-between "
       onClick={() => setIsOpen(!isOpen)}
     >
       <FaRegMoneyBillAlt className="text-red-500 text-2xl" />

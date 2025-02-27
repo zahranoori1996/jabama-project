@@ -4,9 +4,7 @@ import Search from './Search'
 
 import banner from "./../assets/img/banner.jpg"
 
-import CityDropDown from './CityDropDown';
-import PropertyDropDown from './PropertyDropDown';
-import PriceDropDown from './PriceDropDown';
+
 
 export default function Banner() {
   return (
@@ -20,9 +18,7 @@ export default function Banner() {
         <p className='lg:text-lg lg:px-15 px-3 py-1 font-semibold text-white'>سفر پاییزی از تو، جاباما</p>
       </div>
       <div className='flex flex-col lg:flex-row w-[1200px] h-[120px] backdrop-blur-lg my-12 rounded-2xl'>
-        <CityDropDown   />
-        <PropertyDropDown />
-        <PriceDropDown/>
+      
         
         <Search/>
       </div>

@@ -5,13 +5,13 @@ import { TbBath } from "react-icons/tb";
 
 export default function House({house}) {
   return (
-    <div className='bg-white shadow-1 p-5 rounded-lg mt-16 mx-auto cursor-pointer
-    hover:shadow-2xl transition'>
+    <div className='bg-white shadow-1 p-5 rounded-lg mt-10 mx-auto cursor-pointer
+    hover:shadow-2xl transition h-[450px]'>
         <img className='mb-8' src={house.image} />
-        <div className='bg-gray-700 rounded-full text-white px-3 py 1 inline-block'>
+        <div className='bg-gray-700 rounded-full text-white px-3 py 1 inline-block mb-2 ml-1'>
             {house.type}
         </div>
-        <div className='bg-red-500 rounded-full text-white px-3 py 1 inline-block'>
+        <div className='bg-red-500 rounded-full text-white px-3 py 1 inline-block mb-2'>
             {house.city}
         </div>
       <div className="text-lg font-semibold max-w-[260px] ">
@@ -42,7 +42,7 @@ export default function House({house}) {
                 {house.surface}
             </div>
         </div>
-        <div className="text-lg font-semibold text-red-500 mb-4">{house.price}</div>
+        <div className="text-lg font-semibold text-red-500 ">{house.price} تومان</div>
       </div>
     </div>
   )
