@@ -1,9 +1,11 @@
 import { createContext, useEffect, useState } from "react";
+// import data
 import { housesData } from '../data';
 
-
+// create context
 export const HouseContext = createContext();
 
+// provider
 const HouseContextProvider = ({ children }) => {
     const [houses, setHouses] = useState(housesData);
     const [city, setCity] = useState("مقاصد (همه)");
@@ -44,76 +46,62 @@ const HouseContextProvider = ({ children }) => {
     const handleClick = () => {
         setLoading(true);
         const isDefault = (str) => {
-            return str.split('').includes(('همه'))
+            return str.split(' ').includes('(همه)');
         }
 
 
-        const minPrice = parseInt(price.split('')[0]);
-        const maxPrice = parseInt(price.split('')[2]);
+   // get first string (price) and parse it to number
+   const minPrice = parseInt(price.split(' ')[0]);
+   // get last string (price) and parse it to number
+   const maxPrice = parseInt(price.split(' ')[2]);
 
         const newHouses = housesData.filter((house) => {
             const housePrice = parseInt(house.price);
-
-            if (house.city === city &&
-                house.type === property &&
-                house.price >= minPrice &&
-                house.price <= maxPrice
+            // all values are selected
+            if (
+              house.city === city &&
+              house.type === property &&
+              housePrice >= minPrice &&
+              housePrice <= maxPrice
             ) {
-                return house
+              return house;
             }
-            if (isDefault(city) &&
-                isDefault(property) &&
-                isDefault(price)) {
+            // all values are default
+            if (isDefault(city) && isDefault(property) && isDefault(price)) {
+              return house;
+            }
+            // country is not default
+            if (!isDefault(city) && isDefault(property) && isDefault(price)) {
+              return house.city === city;
+            }
+            // property is not default
+            if (!isDefault(property) && isDefault(city) && isDefault(price)) {
+              return house.type === property;
+            }
+            // price is not default
+            if (!isDefault(price) && isDefault(city) && isDefault(property)) {
+              if (housePrice >= minPrice && housePrice <= maxPrice) {
                 return house;
-
+              }
             }
-            if (!isDefault(city) &&
-                isDefault(property) &&
-                isDefault(price)) {
+            // country and property is not default
+            if (!isDefault(city) && !isDefault(property) && isDefault(price)) {
+              return house.city === city && house.type === property;
+            }
+            // country and price is not default
+            if (!isDefault(city) && isDefault(property) && !isDefault(price)) {
+              if (housePrice >= minPrice && housePrice <= maxPrice) {
                 return house.city === city;
-
+              }
             }
-            if (isDefault(city) &&
-                !isDefault(property) &&
-                isDefault(price)) {
-                return house.property === property
-
+            // property and price is not default
+            if (isDefault(city) && !isDefault(property) && !isDefault(price)) {
+              if (housePrice >= minPrice && housePrice <= maxPrice) {
+                return house.type === property;
+              }
             }
-
-            if (isDefault(city) &&
-                isDefault(property) &&
-                !isDefault(price)) {
-                if (housePrice >= minPrice && housePrice <= maxPrice) {
-                    return house
-                }
-
-
-            }
-
-            if (!isDefault(city) &&
-                !isDefault(property) &&
-                isDefault(price)) {
-                return house.city === city && house.type === property
-
-            }
-            if (!isDefault(city) &&
-                isDefault(property) &&
-                !isDefault(price)) {
-                if (housePrice >= minPrice && housePrice <= maxPrice) {
-                    return house.city === city;
-                }
-
-            }
-            if (isDefault(city) &&
-                !isDefault(property) &&
-                !isDefault(price)) {
-                if (housePrice >= minPrice && housePrice <= maxPrice) {
-                    return house.type === property;
-                }
-            }
-
-        })
-
+          });
+          
 
 
         setTimeout(() => {
