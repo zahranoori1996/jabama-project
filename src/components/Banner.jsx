@@ -17,7 +17,8 @@ export default function Banner() {
         <p className='lg:text-lg lg:px-15 px-3 py-1 text-white'>اجاره ویلا، سوئیت و اقامتگاه در شمال و سراسر ایران </p>
         <p className='lg:text-lg lg:px-15 px-3 py-1 font-semibold text-white'>سفر پاییزی از تو، جاباما</p>
       </div>
-      <div className='flex flex-col lg:flex-row w-[1200px] h-[120px] backdrop-blur-lg my-12 rounded-2xl'>
+      <div className='flex flex-col lg:flex-row lg:w-[1200px] lg:h-[120px] backdrop-blur-lg lg:my-12 rounded-2xl px-10 
+     cursor-pointer items-center justify-center '>
       
         
         <Search/>
