@@ -23,7 +23,7 @@ const HouseContextProvider = ({ children }) => {
             return house.city
         })
         //نمایش حالت دیفالت و یونیک شدن شهرها برای نمایش در دراپ دان در متغیر uniqCities
-        const uniqCities = ["مقاصد(همه)", ...new Set(allCities)];
+        const uniqCities = ["مقاصد (همه)", ...new Set(allCities)];
         setCities(uniqCities);
 
     }, [])
@@ -36,7 +36,7 @@ const HouseContextProvider = ({ children }) => {
             return house.type
         })
         //نمایش حالت دیفالت و یونیک شدن نوع خانه ها برای نمایش در دراپ دان در متغیر uniqCities
-        const uniqProperties = ["خانه(همه)", ...new Set(allProperties)];
+        const uniqProperties = ["خانه (همه)", ...new Set(allProperties)];
         setProperties(uniqProperties);
 
     }, [])
