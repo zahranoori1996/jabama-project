@@ -63,7 +63,7 @@ export default function HomeDetails() {
           action=""
           className="p-4 shadow bg-white mr-4 rounded-sm flex flex-col gap-3"
         >
-          <img className="w-11 h-11 rounded-full mb-3" src={property.agent.image} />
+          <img className="w-16 rounded-full mb-3" src={property.agent.image} />
           <input
             type="text"
             placeholder="نام کامل*"
