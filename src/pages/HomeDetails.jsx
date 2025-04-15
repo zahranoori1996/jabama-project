@@ -12,10 +12,10 @@ export default function HomeDetails() {
     return house.id === parseInt(id);
   });
   return (
-    <div className="container mx-auto grid grid-cols-12 max-md:flex max-md:flex-col max-md:px-2">
+    <div className="container px-12 mx-auto grid grid-cols-12 max-md:flex max-md:flex-col max-md:px-2">
       <div className="col-span-8">
         <div className="flex justify-between items-center">
-          <div className="">
+          <div className="flex flex-col gap-2">
             <h1 className="text-black font-semibold">{property.name}</h1>
             <h3 className="text-black">{property.address} </h3>
           </div>
@@ -52,11 +52,11 @@ export default function HomeDetails() {
           </div>
         </div>
 
-        <p className="paragraph">{property.description}</p>
+        <p className="pb-6 leading-7">{property.description}</p>
       </div>
 
-      <div className="col-span-4 text-left">
-        <div className="font-semibold text-red-500 py-3">
+      <div className="col-span-4 text-left mt-4">
+        <div className="font-semibold text-red-500 pb-6">
           {property.price} تومان
         </div>
         <form
