@@ -29,7 +29,7 @@ export default function HomeDetails() {
           </div>
         </div>
 
-        <img className="rounded my-2" src={property.imageLg} />
+        <img className="rounded my-2 w-[100%]" src={property.imageLg} />
 
         <div className="flex gap-x-4 my-4 ">
           <div className="flex items-center text-red-500 gap-1">
