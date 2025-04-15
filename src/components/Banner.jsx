@@ -8,7 +8,7 @@ import banner from "./../assets/img/banner.jpg"
 
 export default function Banner() {
   return (
-    <div className='h-[90vh] bg-cover bg-no-repeat bg-center flex-col items-center flex bg-black' style={{backgroundImage:`url(${banner})`}}>
+    <div className='h-[90vh] max-md:h-[100%] bg-cover bg-no-repeat bg-center flex-col items-center flex bg-black' style={{backgroundImage:`url(${banner})`}}>
       <div className="flex flex-col">
         <h1 className='lg:text-6xl text-3xl lg:p-15 px-3 [text-shadow:_0px_1px_8px_#000000] p-5 '>
           <span className='font-semibold text-red-500'>مکان </span>
